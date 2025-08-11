@@ -1,0 +1,8 @@
+import yfinance as yf
+import pandas as pd
+
+tickers = ['AAPL', 'MSFT', 'META', 'NVDA','GOOGL']
+
+data = yf.download(tickers, start="2023-01-01", end ="2025-01-01")
+close_prices = data['Close']
+close_prices.to_csv('markowitz_portfolio/stock_data.csv')
